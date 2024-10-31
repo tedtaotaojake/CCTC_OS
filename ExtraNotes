@@ -10,3 +10,55 @@ spotify: downloads(home/desktop something), mcafee: find port windows 23456, net
 registry had something obpfuscated. mcafee was backed up by registry which was backed up by powershell profiles. 
 
 
+-cron
+/etc/crontab
+/var/spool/cron
+/etc/cron.d
+
+
+-/etc/init.d --sysv
+-/etc/profile
+/etc/enviroment
+/etc/initab --sysv
+/etc/rc.d/*
+/lib/systemd/systemd
+/usr/lib/systemd/system
+
+-services/processes
+ps -elf
+top or htop
+systemctl status <PID>
+
+windows////
+autoruns
+schtasks
+
+-registry locations
+
+hklm, hkcu, hku, hkcr, hkcc
+
+powershell profile
+test-path -path $profile.currentUsercurrentHost
+
+services/processes////
+get-service, get-process -id <pid>
+
+get-ciminstance
+win32_service
+
+artifacts/////
+userasssits, BAM, Recyvle bin, prefetch, jumplist, recent files, browser artifacts
+
+ports sus
+counting, repeating
+
+obfuscation:
+taking something legit: google update --> spotifu, steam, netflix.
+mispell words:
+c:\windows\system32
+c:\users\public\downloads\svchost.exe
+start up folder
+c:\users\username\appdata\roaming\microsoft\windows\start menu\programs\startup
+
+windows: 6
+linux: 4
