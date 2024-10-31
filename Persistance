@@ -1,0 +1,47 @@
+NOTES:
+PERSISTANCE
+
+//List the contents of common PowerShell profiles
+# User-specific profile
+Get-Content $PROFILE
+
+# All users, all hosts profile
+Get-Content "$($env:ProgramFiles)\PowerShell\7\profile.ps1"  # Adjust path for PowerShell version
+
+# All users, current host profile
+Get-Content "$($env:ProgramFiles)\PowerShell\7\Microsoft.PowerShell_profile.ps1"
+
+# Current user, all hosts profile
+Get-Content "$HOME\Documents\PowerShell\Profile.ps1"
+
+# Current user, current host profile
+Get-Content "$HOME\Documents\WindowsPowerShell\profile.ps1"
+
+//To find scheduled tasks that might be executing PowerShell scripts:
+Get-ScheduledTask | Where-Object { $_.Actions | Where-Object { $_.Execute -like "*powershell*" } }
+
+//List programs set to run at startup, which could include PowerShell scripts:
+Get-CimInstance -ClassName Win32_StartupCommand
+
+//Look for entries in the Windows Registry that might execute PowerShell scripts on startup:
+# Check Run keys
+Get-ItemProperty HKCU:\Software\Microsoft\Windows\CurrentVersion\Run
+Get-ItemProperty HKLM:\Software\Microsoft\Windows\CurrentVersion\Run
+
+# Check for scheduled tasks in the registry
+Get-ItemProperty HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnce
+
+//Look for unusual modules that could indicate malicious intent:
+Get-Module -ListAvailable
+
+//Search for PowerShell scripts in common locations:
+Get-ChildItem -Path C:\ -Filter *.ps1 -Recurse -ErrorAction SilentlyContinue | Select-Object FullName
+
+//Check the current execution policy, which could allow for the execution of scripts:
+Get-ExecutionPolicy -List
+
+//If you're trying to search directories but lack access:
+Get-ChildItem -Path C:\ -Filter *.ps1 -Recurse -ErrorAction SilentlyContinue
+
+//If you can't change the execution policy due to permissions, you may need administrative access:
+Get-ExecutionPolicy -List -ErrorAction SilentlyContinue
