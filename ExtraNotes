@@ -2,3 +2,11 @@ Random notes
 
 google udate and file not found: autoruns, shtask: google update. PERSISTANCE. Profile
 
+any user home dir in linux: ls -la (find every hidden doc) cat or grep
+
+etc/crontab. Process validity 
+
+spotify: downloads(home/desktop something), mcafee: find port windows 23456, netstat -ano, tasklist find pid and match (search) procmon.
+registry had something obpfuscated. mcafee was backed up by registry which was backed up by powershell profiles. 
+
+
