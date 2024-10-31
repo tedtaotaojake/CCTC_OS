@@ -45,3 +45,26 @@ Get-ChildItem -Path C:\ -Filter *.ps1 -Recurse -ErrorAction SilentlyContinue
 
 //If you can't change the execution policy due to permissions, you may need administrative access:
 Get-ExecutionPolicy -List -ErrorAction SilentlyContinue
+
+# View the system crontab
+cat /etc/crontab
+
+# List files in /etc/cron.d
+ls -l /etc/cron.d
+
+
+# List the current user's cron jobs
+crontab -l
+
+# List another user's cron jobs (requires root permissions)
+sudo crontab -l -u [username]
+# List all user crontabs
+ls -l /var/spool/cron/crontabs/
+
+
+# Check for scripts in cron directories
+find /etc/cron.* -type f -exec cat {} \;
+
+ps aux | grep cron
+
+cat /etc/rc.local
