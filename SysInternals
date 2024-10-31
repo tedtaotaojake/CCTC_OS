@@ -1,0 +1,7 @@
+//Start sysinternals
+PS C:\windows\system32> net use * http://live.sysinternals.com 
+Drive Z: is now connected to http://live.sysinternals.com.
+
+The command completed successfully.
+
+//
