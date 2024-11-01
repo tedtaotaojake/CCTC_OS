@@ -60,5 +60,6 @@ c:\users\public\downloads\svchost.exe
 start up folder
 c:\users\username\appdata\roaming\microsoft\windows\start menu\programs\startup
 
-windows: 6
-linux: 4
+TEST IPS
+windows: 10.50.28.87
+linux: 10.50.21.85
